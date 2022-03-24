@@ -1,0 +1,19 @@
+.Header * {
+  width: 100%;
+  height: 67px;
+  background-color: #c3cfd9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Header h1 {
+  font-family: "Roboto", sans-serif;
+  color: #e8833a;
+  font-size: 34px;
+  line-height: 40px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
