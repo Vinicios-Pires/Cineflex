@@ -1,0 +1,59 @@
+.Sessoes {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.Sessoes h1 {
+  width: 374px;
+  height: 110px;
+  font-family: "Roboto", sans-serif;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: 0.04em;
+  color: #293845;
+}
+
+.Sessoes p {
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  line-height: 23px;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.02em;
+  margin-bottom: 22px;
+  color: #293845;
+}
+
+.botoes {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  text-align: center;
+}
+
+.Sessoes button {
+  width: 83px;
+  height: 43px;
+  background: #e8833a;
+  border-radius: 3px;
+  border: none;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  line-height: 21px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  
+  margin-bottom: 22px;
+}
