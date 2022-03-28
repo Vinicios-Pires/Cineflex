@@ -15,6 +15,7 @@ function Assentos() {
   const [nome, setNome] = useState("");
   const [cpf, setCpf] = useState("");
   const [data, setData] = useState([]);
+  const [id, setId] = useState([]);
   const navigate = useNavigate();
 
   function ComprarAssento(event) {
@@ -66,20 +67,31 @@ function Assentos() {
     <></>;
   }
 
-  let idNum = assentosEscolhidos.map(Number);
-  console.log(idNum);
+  let idNum = id.map(Number);
 
   function AssentoSelecionado(e) {
-    const idAssento = e.target.classList[0];
-    if (assentosEscolhidos.includes(idAssento)) {
-      let buscar = idAssento;
+    const nameAssento = e.target.classList[0];
+    const idAssento = e.target.classList[1];
+
+    if (assentosEscolhidos.includes(nameAssento) && id.includes(idAssento)) {
+      let buscar = nameAssento;
+      let buscar2 = idAssento;
+
       let indice = assentosEscolhidos.indexOf(buscar);
+      let indice2 = id.indexOf(buscar2);
+
       assentosEscolhidos.splice(indice, 1);
+      id.splice(indice2, 1);
+
       setAssentoEscolhidos([...assentosEscolhidos]);
+      setId([...id]);
+
       return;
     }
 
-    setAssentoEscolhidos([...assentosEscolhidos, idAssento]);
+    setId([...id, idAssento]);
+
+    setAssentoEscolhidos([...assentosEscolhidos, nameAssento]);
   }
 
   function Indisponivel() {
@@ -95,7 +107,7 @@ function Assentos() {
             <div
               onClick={AssentoSelecionado}
               key={s.id}
-              className={`${s.name} ${
+              className={`${s.name} ${s.id} ${
                 assentosEscolhidos.includes(`${s.name}`)
                   ? "selecionado"
                   : "disponivel"
