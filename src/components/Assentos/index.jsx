@@ -17,17 +17,6 @@ function Assentos() {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
 
-
-  // Nao estou conseguindo entender como validar inputs pelo react
-  // function validar() {
-  //   !(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/.test(cpf)) ? "cpf incorreto" : ""
-  //   if (assentosEscolhidos.length === 0) {
-  //     alert("Voce precisa selecionar assentos")
-  //   }
-  // }
-
-
-
   function ComprarAssento(event) {
     event.preventDefault();
 
@@ -40,17 +29,25 @@ function Assentos() {
       }
     );
 
-    promessa.then((resposta) => {
-      console.log("foi enviado");
-      navigate("/sucesso", {
-        state: {
-          nome: nome,
-          cpf: cpf,
-          data: data,
-          assentos: assentosEscolhidos,
-        },
+    if (
+      !cpf.match(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/) ||
+      assentosEscolhidos.length === 0
+    ) {
+      alert("Cpf incorreto ou nenhum assento foi selecionado");
+      return;
+    } else {
+      promessa.then((resposta) => {
+        console.log("foi enviado");
+        navigate("/sucesso", {
+          state: {
+            nome: nome,
+            cpf: cpf,
+            data: data,
+            assentos: assentosEscolhidos,
+          },
+        });
       });
-    });
+    }
     promessa.catch((err) => {
       console.log("nao foi enviado");
     });
@@ -69,8 +66,8 @@ function Assentos() {
     <></>;
   }
 
-  let idNum = assentosEscolhidos.map(Number)
-  console.log(idNum)
+  let idNum = assentosEscolhidos.map(Number);
+  console.log(idNum);
 
   function AssentoSelecionado(e) {
     const idAssento = e.target.classList[0];
@@ -81,7 +78,7 @@ function Assentos() {
       setAssentoEscolhidos([...assentosEscolhidos]);
       return;
     }
-    
+
     setAssentoEscolhidos([...assentosEscolhidos, idAssento]);
   }
 
