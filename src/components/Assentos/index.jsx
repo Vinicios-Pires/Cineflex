@@ -19,12 +19,12 @@ function Assentos() {
 
 
   // Nao estou conseguindo entender como validar inputs pelo react
-  function validar() {
-    !(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/.test(cpf)) ? "cpf incorreto" : ""
-    if (assentosEscolhidos.length === 0) {
-      alert("Voce precisa selecionar assentos")
-    }
-  }
+  // function validar() {
+  //   !(/^\d{3}\.\d{3}\.\d{3}\-\d{2}$/.test(cpf)) ? "cpf incorreto" : ""
+  //   if (assentosEscolhidos.length === 0) {
+  //     alert("Voce precisa selecionar assentos")
+  //   }
+  // }
 
 
 
@@ -34,7 +34,7 @@ function Assentos() {
     const promessa = axios.post(
       "https://mock-api.driven.com.br/api/v5/cineflex/seats/book-many",
       {
-        ids: assentosEscolhidos,
+        ids: idNum,
         name: nome,
         cpf: cpf,
       }
@@ -69,6 +69,9 @@ function Assentos() {
     <></>;
   }
 
+  let idNum = assentosEscolhidos.map(Number)
+  console.log(idNum)
+
   function AssentoSelecionado(e) {
     const idAssento = e.target.classList[0];
     if (assentosEscolhidos.includes(idAssento)) {
@@ -78,7 +81,7 @@ function Assentos() {
       setAssentoEscolhidos([...assentosEscolhidos]);
       return;
     }
-
+    
     setAssentoEscolhidos([...assentosEscolhidos, idAssento]);
   }
 
@@ -132,7 +135,7 @@ function Assentos() {
           />
         </div>
         <div className="Botao">
-          <button onClick={() => validar()} type="submit">Reservar assento(s)</button>
+          <button type="submit">Reservar assento(s)</button>
         </div>
       </form>
 
