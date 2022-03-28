@@ -1,0 +1,54 @@
+.exemplos-assentos {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding-top: 24px;
+}
+
+.exemplos-assentos div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+}
+
+.exemplos-assentos p {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  line-height: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: -0.013em;
+
+  color: #4e5a65;
+}
+
+.exemplo-assento {
+  width: 25px;
+  height: 25px;
+
+  box-sizing: border-box;
+  border-radius: 17px;
+}
+
+.selecionado {
+  background: #8dd7cf;
+  border: 1px solid #1aae9e;
+}
+
+.disponivel {
+  background: #c3cfd9;
+  border: 1px solid #7b8b99;
+}
+
+.indisponivel {
+  background: #fbe192;
+  border: 1px solid #f7c52b;
+}

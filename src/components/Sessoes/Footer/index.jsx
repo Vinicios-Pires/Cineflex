@@ -5,12 +5,12 @@ import axios from "axios";
 import "./style.css";
 
 function Footer() {
-  const { idSessao } = useParams();
+  const { idFilme } = useParams();
   const [filmeEscolhido, setFilmeEscolhido] = useState(null);
 
   useEffect(() => {
     const requisicao = axios.get(
-      `https://mock-api.driven.com.br/api/v5/cineflex/movies/${idSessao}/showtimes`
+      `https://mock-api.driven.com.br/api/v5/cineflex/movies/${idFilme}/showtimes`
     );
     requisicao.then((resposta) => {
       setFilmeEscolhido(resposta.data);

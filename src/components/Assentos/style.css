@@ -1,0 +1,61 @@
+.Assentos h1 {
+  width: 100%;
+  height: 110px;
+
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+
+  color: #293845;
+}
+
+.Assentos .assentos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.Assentos .assentos div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 26px;
+  height: 26px;
+
+  box-sizing: border-box;
+  border-radius: 12px;
+
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  line-height: 13px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+
+  color: #000000;
+}
+
+.disponivel {
+  background: #c3cfd9;
+  border: 1px solid #808f9d;
+}
+
+.indisponivel {
+  background: #fbe192;
+  border: 1px solid #f7c52b;
+}
+
+.selecionado {
+  background: #8dd7cf;
+  border: 1px solid #1aae9e;
+}

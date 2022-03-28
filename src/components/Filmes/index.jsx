@@ -17,18 +17,15 @@ function Filmes() {
     });
   }, []);
 
-  if (filmes === null) {
-    return <></>;
-  }
   return (
     <div className="Filmes">
       <h1>Selecione o filme</h1>
       <ul>
-        {filmes.map((filme) => (
-          <Link to={`/sessoes/${filme.id}`}>
-            <li key={filme.id}>
+        {filmes?.map((filme) => (
+          <Link key={filme.id} to={`/sessoes/${filme.id}`}>
+            <li>
               <div>
-                <img key={filme.id} src={filme.posterURL} alt={filme.title} />
+                <img src={filme.posterURL} alt={filme.title} />
               </div>
             </li>
           </Link>
